@@ -1,0 +1,81 @@
+<Card>
+          <div className="card_head_wrapper">
+            <div className='inflex'>
+              <Cardimg></Cardimg>
+              <Cardid> id </Cardid>
+            </div>
+            <div className='inflex'>
+              <Time>1시간 전</Time>
+              <div className='btn md-btn'> 수정</div>
+            </div>
+          </div>
+          <Grid>
+            {/* <div className='card_txt'> {post[1].txt} </div> */}
+            <div className='card_img_wrapper'> </div>
+          </Grid>
+          <div className="card_head_wrapper">
+          <p>좋아요 10개</p>
+          <span class="material-icons">favorite_border</span>
+          {/* <span class="material-icons">favorite</span> */}
+          </div>
+        </Card>
+
+        <Card>
+          <div className="card_head_wrapper">
+            <div className='inflex'>
+              <Cardimg></Cardimg>
+              <Cardid> id </Cardid>
+            </div>
+            <div className='inflex'>
+              <Time>1시간 전</Time>
+              <div className='btn md-btn'> 수정</div>
+            </div>
+          </div>
+          <Grid>            
+            <div className='card_img_wrapper'> </div>
+            <div className='card_txt'> txt here </div>
+          </Grid>
+          <div className="card_head_wrapper">
+          <p>좋아요 10개</p>
+          <span class="material-icons">favorite_border</span>
+          {/* <span class="material-icons">favorite</span> */}
+          </div>
+        </Card>
+
+        <Card>
+          <div className="card_head_wrapper">
+            <div className='inflex'>
+              <Cardimg></Cardimg>
+              <Cardid> id </Cardid>
+            </div>
+            <div className='inflex'>
+              <Time>1시간 전</Time>
+              <div className='btn md-btn'> 수정</div>
+            </div>
+          </div>
+          <Grid2>
+            <div className='card_txt'> txt here </div>
+            <div className='card_img_wrapper'> </div>
+          </Grid2>
+          <div className="card_head_wrapper">
+          <p>좋아요 10개</p>
+          <span class="material-icons">favorite_border</span>
+          {/* <span class="material-icons">favorite</span> */}
+          </div>
+        </Card>
+
+
+
+
+        
+  const addPost = ()=> {
+    dispatch(createFeedFB({img: _img.current.url, txt: _txt.current.value, email:_user.email, layout:layout, time:timestamps}));
+    alert('Your feed has been added!')
+    navigate('/')
+  }
+
+  
+  // timestamp
+  const current= Date.now();
+  const timestamps =new Intl.DateTimeFormat('en-US', {year: 'numeric', month: '2-digit',day: '2-digit', hour: '2-digit', minute: '2-digit'}).format(current)
+  console.log(timestamps);
